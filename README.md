@@ -73,7 +73,7 @@ product: {
 It is not enough to just configure the module as the module cannot create subscribers. Thus you must create each subscriber in your project.
 
 ```ts
-// src/subscribers/product-to-builder
+// src/subscribers/product-to-builder.ts
 export { default }, * from '@oak-digital/medusa-plugin-builder/subscribers/product';
 ```
 
