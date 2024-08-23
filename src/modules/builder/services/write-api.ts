@@ -1,5 +1,5 @@
 import { Zodios } from '@zodios/core';
-import { BuilderModuleOptions, builderModuleOptionsSchema } from "../service";
+import { BuilderModuleOptions, builderModuleOptionsSchema } from "../config";
 import { z } from 'zod';
 import { BuilderModuleContainer } from '../container';
 
