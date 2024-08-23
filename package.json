@@ -1,5 +1,5 @@
 {
-  "name": "medusa-plugin-builder",
+  "name": "@oak-digital/medusa-plugin-builder",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
