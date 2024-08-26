@@ -1,5 +1,6 @@
 import { createStep, StepResponse, createWorkflow, WorkflowResponse } from "@medusajs/workflows-sdk"
 import { ModuleRegistrationName } from "@medusajs/utils";
+import '../modules/implementations';
 
 type SaveInBuilderInput = {
     productId: string;
