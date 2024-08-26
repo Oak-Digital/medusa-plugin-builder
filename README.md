@@ -82,3 +82,9 @@ export { default, config } from '@oak-digital/medusa-plugin-builder/dist/subscri
 If you do not want to use the provided subscribers, you can trigger the workflows yourself
 
 TODO:
+
+### Admin widgets
+
+You should also set up each admin widget
+
+TODO:

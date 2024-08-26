@@ -9,31 +9,45 @@
   ],
   "scripts": {
     "release": "bumpp",
-    "dev": "rimraf dist && tsc -w",
-    "build": "rimraf dist && tsc"
+    "dev": "rimraf dist && run-p dev:*",
+    "dev:admin": "tsc -w --project tsconfig.admin.json",
+    "dev:server": "tsc -w --project tsconfig.json",
+    "build": "rimraf dist && tsc && tsc --project tsconfig.admin.json"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@medusajs/admin-shared": "0.0.2-preview-20240826120715",
     "@medusajs/medusa": "preview",
     "@medusajs/modules-sdk": "preview",
     "@medusajs/types": "preview",
+    "@medusajs/ui": "3.0.1-preview-20240826120715",
     "@medusajs/utils": "preview",
     "@medusajs/workflows-sdk": "preview",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
     "axios": "^1.7.4",
     "bumpp": "^9.5.2",
+    "npm-run-all": "^4.1.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
     "zod": "^3.23.8"
   },
   "peerDependencies": {
+    "@medusajs/admin-shared": "0.0.2-preview-20240826120715",
     "@medusajs/medusa": "^preview",
     "@medusajs/modules-sdk": "^preview",
     "@medusajs/types": "^preview",
+    "@medusajs/ui": "3.0.1-preview-20240826120715",
     "@medusajs/utils": "^preview",
     "@medusajs/workflows-sdk": "^preview",
     "axios": "^0.x || ^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "zod": "^3.x"
   },
   "dependencies": {

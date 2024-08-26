@@ -14,12 +14,14 @@
     "outDir": "dist",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
+    "src/admin/**/*",
     "node_modules",
-    "dist"
+    "dist",
   ],
 }
