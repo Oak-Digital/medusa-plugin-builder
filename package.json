@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "release": "bumpp",
     "dev": "rimraf dist && tsc -w",
     "build": "rimraf dist && tsc"
   },
@@ -21,6 +22,7 @@
     "@medusajs/utils": "preview",
     "@medusajs/workflows-sdk": "preview",
     "axios": "^1.7.4",
+    "bumpp": "^9.5.2",
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
     "zod": "^3.23.8"
