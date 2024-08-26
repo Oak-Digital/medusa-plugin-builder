@@ -2,22 +2,14 @@
   "name": "@oak-digital/medusa-plugin-builder",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "exports": {
-    "./*": "./dist/*/index.js",
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "scripts": {
-    "dev": "tsc -w",
-    "build": "tsc"
+    "dev": "rimraf dist && tsc -w",
+    "build": "rimraf dist && tsc"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +21,7 @@
     "@medusajs/utils": "preview",
     "@medusajs/workflows-sdk": "preview",
     "axios": "^1.7.4",
+    "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
     "zod": "^3.23.8"
   },

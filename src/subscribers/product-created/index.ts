@@ -1,5 +1,5 @@
 import { SubscriberArgs, type SubscriberConfig } from "@medusajs/medusa"
-import { saveProductInBuilderWorkflow } from "../workflows/save-builder-product";
+import { saveProductInBuilderWorkflow } from "../../workflows/save-builder-product";
 
 // subscriber function
 export default async function productCreateHandler({

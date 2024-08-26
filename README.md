@@ -30,7 +30,7 @@ module.exports = defineConfig({
   modules: {
     // Your other modules ...
     builderModuleService: {
-      resolve: '@oak-digital/medusa-plugin-builder/modules/builder',
+      resolve: '@oak-digital/medusa-plugin-builder/dist/modules/builder/index.js',
       /** @type {import('@oak-digital/medusa-plugin-builder').BuilderModuleOptions} */
       options: {
         apiKey: process.env.BUILDER_API_KEY,
@@ -74,7 +74,7 @@ It is not enough to just configure the module as the module cannot create subscr
 
 ```ts
 // src/subscribers/product-to-builder.ts
-export { default }, * from '@oak-digital/medusa-plugin-builder/subscribers/product';
+export { default, config } from '@oak-digital/medusa-plugin-builder/dist/subscribers/product/index';
 ```
 
 ### Custom subscribers
