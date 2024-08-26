@@ -7,4 +7,5 @@ export default Module(BUILDER_MODULE, {
     service,
 });
 
+export * from './config';
 export * from './types';

@@ -3,7 +3,7 @@ import { BuilderModuleContainer } from "./container";
 import {
     MedusaService,
 } from '@medusajs/utils';
-import { ProductDTO } from "@medusajs/types";
+import { ProductCategoryDTO, ProductDTO } from "@medusajs/types";
 import BuilderWriteApiService from "./services/write-api";
 import { BuilderModuleOptions, builderModuleOptionsSchema } from "./config";
 
@@ -27,6 +27,16 @@ export default class BuilderModuleService extends MedusaService({}) {
         }
         const modelName = productConfig.modelName;
         const response = await this.builderWriteApi.createModel(modelName, product.title, productConfig.transform(product));
+        return response;
+    }
+
+    public async onCategoryCreated(category: ProductCategoryDTO) {
+        const categoryConfig = this.options_.models.category;
+        if (!categoryConfig) {
+            return;
+        }
+        const modelName = categoryConfig.modelName;
+        const response = await this.builderWriteApi.createModel(modelName, category.name, categoryConfig.transform(category));
         return response;
     }
 }
