@@ -1,4 +1,4 @@
-import { ProductCategoryDTO, ProductDTO } from "@medusajs/types";
+import { ProductCategoryDTO, ProductDTO, ProductOptionDTO, ProductOptionValueDTO } from "@medusajs/types";
 import { z } from "zod";
 
 export const builderModuleOptionsSchema = z.object({
@@ -15,6 +15,15 @@ type ModelConfig<T, N extends string, F> = {
 type Models = {
     product?: ModelConfig<ProductDTO, string, any>;
     category?: ModelConfig<ProductCategoryDTO, string, any>;
+    productOptionWithValue?: ModelConfig<{
+        option: ProductOptionDTO,
+        value: ProductOptionValueDTO,
+    }, string, any> & {
+        transformToRetrieve: (x: {
+            option: ProductOptionDTO,
+            value: ProductOptionValueDTO,
+        }) => { [key: string]: string };
+    }
 };
 
 export type BuilderModuleOptions = z.infer<typeof builderModuleOptionsSchema>;
