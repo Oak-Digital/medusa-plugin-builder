@@ -18,11 +18,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/admin-shared": "0.0.2-preview-20240826120715",
+    "@medusajs/admin-shared": "preview",
     "@medusajs/medusa": "preview",
     "@medusajs/modules-sdk": "preview",
     "@medusajs/types": "preview",
-    "@medusajs/ui": "3.0.1-preview-20240826120715",
+    "@medusajs/ui": "preview",
     "@medusajs/utils": "preview",
     "@medusajs/workflows-sdk": "preview",
     "@types/react": "^18.3.4",

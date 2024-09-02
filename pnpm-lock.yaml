@@ -11,26 +11,26 @@ dependencies:
 
 devDependencies:
   '@medusajs/admin-shared':
-    specifier: 0.0.2-preview-20240826120715
-    version: 0.0.2-preview-20240826120715
+    specifier: preview
+    version: 0.0.2-preview-20240902090509
   '@medusajs/medusa':
     specifier: preview
-    version: 1.20.6-preview-20240822060554(@babel/runtime@7.25.0)(@types/ioredis-mock@8.2.5)(@types/react-dom@18.3.0)(@types/react@18.3.4)(pg@8.11.3)(react-dom@18.3.1)(typescript@5.5.4)
+    version: 1.20.6-preview-20240902090509(@babel/runtime@7.25.0)(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)(@types/ioredis-mock@8.2.5)(@types/react-dom@18.3.0)(@types/react@18.3.4)(awilix@8.0.1)(react-dom@18.3.1)(typescript@5.5.4)(ulid@2.3.0)
   '@medusajs/modules-sdk':
     specifier: preview
-    version: 1.13.0-preview-20240822090439(pg@8.11.3)
+    version: 1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)
   '@medusajs/types':
     specifier: preview
-    version: 1.12.0-preview-20240822060554
+    version: 1.12.0-preview-20240902090509
   '@medusajs/ui':
-    specifier: 3.0.1-preview-20240826120715
-    version: 3.0.1-preview-20240826120715(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4)
+    specifier: preview
+    version: 3.0.1-preview-20240902090509(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4)
   '@medusajs/utils':
     specifier: preview
-    version: 1.12.0-preview-20240822060554(pg@8.11.3)
+    version: 1.12.0-preview-20240902090509
   '@medusajs/workflows-sdk':
     specifier: preview
-    version: 0.1.7-preview-20240822060554(pg@8.11.3)
+    version: 0.1.7-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
   '@types/react':
     specifier: ^18.3.4
     version: 18.3.4
@@ -731,6 +731,18 @@ packages:
       graphql: 16.9.0
     dev: true
 
+  /@hookform/error-message@2.0.1(react-dom@18.3.1)(react-hook-form@7.49.1)(react@18.3.1):
+    resolution: {integrity: sha512-U410sAr92xgxT1idlu9WWOVjndxLdgPUHEB8Schr27C9eh7/xUnITWpCMF93s+lGiG++D4JnbSnrb5A21AdSNg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-hook-form: ^7.0.0
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      react-hook-form: 7.49.1(react@18.3.1)
+    dev: true
+
   /@hookform/resolvers@3.4.2(react-hook-form@7.49.1):
     resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
     peerDependencies:
@@ -772,6 +784,14 @@ packages:
   /@inquirer/figures@1.0.5:
     resolution: {integrity: sha512-79hP/VWdZ2UVc9bFGJnoQ/lQMpL74mGgzSYX1xUqCVk7/v73vJCMw1VuyWN1jGkZ9B3z7THAbySqGbCNefcjfA==}
     engines: {node: '>=18'}
+    dev: true
+
+  /@inquirer/input@2.2.9:
+    resolution: {integrity: sha512-7Z6N+uzkWM7+xsE+3rJdhdG/+mQgejOVqspoW+w0AbSZnL6nq5tGMEVASaYVWbkoSzecABWwmludO2evU3d31g==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@inquirer/core': 9.0.10
+      '@inquirer/type': 1.5.2
     dev: true
 
   /@inquirer/type@1.5.2:
@@ -866,15 +886,15 @@ packages:
       type-detect: 4.1.0
     dev: true
 
-  /@medusajs/admin-sdk@0.0.2-preview-20240822060554(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(express@4.19.2)(react-dom@18.3.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-Smq7Nw9XTeePlxWt2NX7wepxERNGaVTq9thLmrwrsOol1gEB3Bf10i5tKdbYs9rhYRlG80MXZDaEbo/G9joo5w==}
+  /@medusajs/admin-sdk@0.0.2-preview-20240902090509(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(express@4.19.2)(react-dom@18.3.1)(typescript@5.5.4):
+    resolution: {integrity: sha512-pwb/eI0BTQn4mM9rbG5P1Z1KrDpr7TMnADchUzlXXbSz35/NbvIGjsJgI6/xqWPs7Ou6O8XQ/e9l2e8r4sjkfQ==}
     peerDependencies:
       express: ^4.18.2
       react-dom: ^18.0.0
     dependencies:
-      '@medusajs/admin-shared': 0.0.2-preview-20240822060554
-      '@medusajs/admin-vite-plugin': 0.0.2-preview-20240822060554(vite@5.4.2)
-      '@medusajs/dashboard': 0.0.2-preview-20240822060554(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(typescript@5.5.4)
+      '@medusajs/admin-shared': 0.0.2-preview-20240902090509
+      '@medusajs/admin-vite-plugin': 0.0.2-preview-20240902090509(vite@5.4.2)
+      '@medusajs/dashboard': 0.0.2-preview-20240902090509(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(typescript@5.5.4)
       '@vitejs/plugin-react': 4.3.1(vite@5.4.2)
       autoprefixer: 10.4.20(postcss@8.4.41)
       compression: 1.7.4
@@ -904,22 +924,18 @@ packages:
       - typescript
     dev: true
 
-  /@medusajs/admin-shared@0.0.2-preview-20240822060554:
-    resolution: {integrity: sha512-W09Phw9yLmKtHATEQZr825aN22fV5gqEy1ibOU3MrJVlOFq51QuAxO5ynfGPMk4gEeA1g8y55L6RLlJGeRulIQ==}
+  /@medusajs/admin-shared@0.0.2-preview-20240902090509:
+    resolution: {integrity: sha512-Q0MbRymQeJwf4mPgDli9WlYMPTvrkWpc0s0DaslFyAgvVwXKqZEsNF1rxdZ9pjjy6RzCzoCxeawrvSWxbxRtcA==}
     dev: true
 
-  /@medusajs/admin-shared@0.0.2-preview-20240826120715:
-    resolution: {integrity: sha512-9yK+rNnoQdh6HO5eRQPc88/cpXdJp82qOqIF35Yss32oCskohFuOJf6jrJtFZ2WTOocvGxPpss6ofrVrJ/nDow==}
-    dev: true
-
-  /@medusajs/admin-vite-plugin@0.0.2-preview-20240822060554(vite@5.4.2):
-    resolution: {integrity: sha512-z92qLFXfWcT/C8lEuElh5QWh/zXV/SodJWrLa7Le5NlOAJPAEThd3Z08nvLSgIOoetslL4gpF6wKYesahzkdLQ==}
+  /@medusajs/admin-vite-plugin@0.0.2-preview-20240902090509(vite@5.4.2):
+    resolution: {integrity: sha512-WMHreC5h8b36V/jq3X9yw/bBmqu/H3rsdcALoRckItjVooYxp92VHUfeX4jfDKwH3V8mDrhNVttus+H4wG26tw==}
     peerDependencies:
       vite: ^5.0.0
     dependencies:
       '@babel/parser': 7.23.5
       '@babel/traverse': 7.23.5
-      '@medusajs/admin-shared': 0.0.2-preview-20240822060554
+      '@medusajs/admin-shared': 0.0.2-preview-20240902090509
       chokidar: 3.5.3
       fdir: 6.1.1
       magic-string: 0.30.5
@@ -929,18 +945,22 @@ packages:
       - supports-color
     dev: true
 
-  /@medusajs/core-flows@0.0.10-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-0mseuXzB21aPkT1TJN5NUg55bLLdF027HOH4FYjY2XEx9dCqttLQZTUhcbnQgnOlRTvF3UrYPBZQ8otzBN9urg==}
+  /@medusajs/core-flows@0.0.10-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
+    resolution: {integrity: sha512-Jcy8Uwn3r32D1l9LRpsoVhRWy4NdanJh3NrRVYFWCaia1mkV1kJPE2TbwTB673lDLtH+zwIDNjkoAcI716Yu+w==}
     engines: {node: '>=16'}
+    peerDependencies:
+      awilix: ^8.0.1
+      ulid: ^2.3.0
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240822060554(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
       awilix: 8.0.1
+      json-2-csv: 5.5.5
       ulid: 2.3.0
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
+      - '@mikro-orm/core'
       - '@mikro-orm/entity-generator'
       - '@mikro-orm/mariadb'
       - '@mikro-orm/migrations-mongodb'
@@ -953,26 +973,26 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
       - tedious
     dev: true
 
-  /@medusajs/dashboard@0.0.2-preview-20240822060554(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(typescript@5.5.4):
-    resolution: {integrity: sha512-1N/d2F0y2BBKtD40/33s3hfaqlcwBxLA2stJU23GiHeINyPFnc+Lr9xCSX7KRuDJ1lLmHm/6QFMUoyb00Ar5aw==}
+  /@medusajs/dashboard@0.0.2-preview-20240902090509(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(typescript@5.5.4):
+    resolution: {integrity: sha512-EmacCb51u7G1Ulurzcv+iqug/lgf1OvDoml6OPk69TEUHyeZqAi2QlgPMh/jss0UF4X4RIzMk1Xi8WgkqDWw4Q==}
     dependencies:
       '@ariakit/react': 0.4.10(react-dom@18.3.1)(react@18.3.1)
       '@dnd-kit/core': 6.1.0(react-dom@18.3.1)(react@18.3.1)
       '@dnd-kit/sortable': 8.0.0(@dnd-kit/core@6.1.0)(react@18.3.1)
+      '@hookform/error-message': 2.0.1(react-dom@18.3.1)(react-hook-form@7.49.1)(react@18.3.1)
       '@hookform/resolvers': 3.4.2(react-hook-form@7.49.1)
-      '@medusajs/icons': 1.2.2-preview-20240822060554(react@18.3.1)
-      '@medusajs/js-sdk': 0.0.2-preview-20240822060554
-      '@medusajs/ui': 3.0.1-preview-20240822060554(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4)
+      '@medusajs/icons': 1.2.2-preview-20240902090509(react@18.3.1)
+      '@medusajs/js-sdk': 0.0.2-preview-20240902090509
+      '@medusajs/ui': 3.0.1-preview-20240902090509(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4)
       '@radix-ui/react-collapsible': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
       '@tanstack/react-query': 5.52.0(react@18.3.1)
-      '@tanstack/react-table': 8.10.7(react-dom@18.3.1)(react@18.3.1)
+      '@tanstack/react-table': 8.20.5(react-dom@18.3.1)(react@18.3.1)
       '@tanstack/react-virtual': 3.10.1(react-dom@18.3.1)(react@18.3.1)
       '@uiw/react-json-view': 2.0.0-alpha.26(@babel/runtime@7.25.0)(react-dom@18.3.1)(react@18.3.1)
       cmdk: 0.2.1(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
@@ -990,6 +1010,7 @@ packages:
       react-country-flag: 3.1.0(react@18.3.1)
       react-currency-input-field: 3.8.0(react@18.3.1)
       react-dom: 18.3.1(react@18.3.1)
+      react-helmet-async: 2.0.5(react@18.3.1)
       react-hook-form: 7.49.1(react@18.3.1)
       react-i18next: 13.5.0(i18next@23.7.11)(react-dom@18.3.1)(react@18.3.1)
       react-jwt: 1.2.2(react@18.3.1)
@@ -1005,15 +1026,16 @@ packages:
       - typescript
     dev: true
 
-  /@medusajs/framework@0.0.2-preview-20240822060554(@types/ioredis-mock@8.2.5)(pg@8.11.3):
-    resolution: {integrity: sha512-ln0JFrEid6jB0F+FXApl6TECrPovnmj0cELC2sA3SRj1+3sJ8CYqpulE2zBYhojtsl+TXpkp7JzRuS+DKLQ1vg==}
+  /@medusajs/framework@0.0.2-preview-20240902090509(@mikro-orm/core@5.9.7)(@types/ioredis-mock@8.2.5)(awilix@8.0.1)(ulid@2.3.0):
+    resolution: {integrity: sha512-0uEdYoNKjMRFAtfiB1rLXvZPMEDkeuy1jhl/BikHLw7MHDszls/yCpQeGWNrGv/nLhEo6/E3NBQ27R3ySAknoQ==}
     engines: {node: '>=20'}
+    peerDependencies:
+      awilix: ^8.0.1
     dependencies:
-      '@medusajs/medusa-cli': 1.3.23-preview-20240822060554
-      '@medusajs/modules-sdk': 1.13.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240822060554(pg@8.11.3)
+      '@medusajs/medusa-cli': 1.3.23-preview-20240902090509(ulid@2.3.0)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
       awilix: 8.0.1
       cookie-parser: 1.4.6
       cors: 2.8.5
@@ -1022,11 +1044,12 @@ packages:
       ioredis: 5.4.1
       ioredis-mock: 8.4.0(@types/ioredis-mock@8.2.5)(ioredis@5.4.1)
       jsonwebtoken: 9.0.2
-      medusa-telemetry: 0.0.18-preview-20240822060554
+      medusa-telemetry: 0.0.18-preview-20240902090509
       morgan: 1.10.0
       zod: 3.22.4
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
+      - '@mikro-orm/core'
       - '@mikro-orm/entity-generator'
       - '@mikro-orm/mariadb'
       - '@mikro-orm/migrations-mongodb'
@@ -1041,50 +1064,47 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
       - tedious
+      - ulid
     dev: true
 
-  /@medusajs/icons@1.2.2-preview-20240822060554(react@18.3.1):
-    resolution: {integrity: sha512-/W0fDesLYdpPQ9uYIeEfInIkemBqa/AmRUjlpybwbO15tkdSDiUTNiqHE1Y/OxXdAc+xfoNmQFQ16so18Rjl3A==}
+  /@medusajs/icons@1.2.2-preview-20240902090509(react@18.3.1):
+    resolution: {integrity: sha512-O9rHMwbKmUeZXaVd8GrD4LNFdZKffPRG4FoLtqaw6Kd4VdKFRQDmuThP4nQTMfe54KZ+7F1rt/UTLk7eKF+c0w==}
     peerDependencies:
       react: ^16.x || ^17.x || ^18.x
     dependencies:
       react: 18.3.1
     dev: true
 
-  /@medusajs/icons@1.2.2-preview-20240826120715(react@18.3.1):
-    resolution: {integrity: sha512-JBcQSa3egzuwFNphxLJ/V3qEL4CnnEdK3nvPcStLPbhGgizYP0lvt9NQ/iBfcZOJNY37Y2364fUOBWDwxQOVmQ==}
-    peerDependencies:
-      react: ^16.x || ^17.x || ^18.x
-    dependencies:
-      react: 18.3.1
-    dev: true
-
-  /@medusajs/js-sdk@0.0.2-preview-20240822060554:
-    resolution: {integrity: sha512-YM69JHHxEseUR7j7FFAGLAnFN8yxEZ60HAhPF9DDgmJNqi1XccbDoPhLAKZG0oFVtA//yTDiGg5q3CnY/gcxnQ==}
+  /@medusajs/js-sdk@0.0.2-preview-20240902090509:
+    resolution: {integrity: sha512-ch9qonizuf29q5gVgqdyVfy/ZE35l6l30Q5KUdxQMo8+MSn6WSpnZNtl7jh6vDYaDoOY1IunKRyTN4YzNbqjLA==}
     engines: {node: '>=18'}
     dependencies:
       qs: 6.13.0
     dev: true
 
-  /@medusajs/link-modules@0.2.12-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-zl5qZH41TNTMx4pB/S/aKqT2eaODEcPZ2NlD4asAysxFEMwU+F5nXiYcFp5sQ823hm0eiDiuGQKzGmA0REBsKg==}
+  /@medusajs/link-modules@0.2.12-preview-20240902090509(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)(awilix@8.0.1):
+    resolution: {integrity: sha512-Bbf92tdleMOU71YuikqLMBSQ3lGKcd0e6hTi4cZE/JLuYk91nmevSLOfA3ZnfWiJdlJXzsEiAsyL/vam/mrjcw==}
     engines: {node: '>=20'}
+    peerDependencies:
+      '@mikro-orm/core': 5.9.7
+      '@mikro-orm/migrations': 5.9.7
+      '@mikro-orm/postgresql': 5.9.7
+      awilix: ^8.0.1
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
       awilix: 8.0.1
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
       - '@mikro-orm/entity-generator'
       - '@mikro-orm/mariadb'
-      - '@mikro-orm/migrations'
       - '@mikro-orm/migrations-mongodb'
       - '@mikro-orm/mongodb'
       - '@mikro-orm/mysql'
@@ -1095,23 +1115,23 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
       - tedious
     dev: true
 
-  /@medusajs/medusa-cli@1.3.23-preview-20240822060554:
-    resolution: {integrity: sha512-wvF9s5TogdL0Yg5msNfiifQCyDDjrqNhGxhXkXAtXlzLhSPBAgV0Y2m0wkNL1UiReIj4lfQoEATEuie2lXD7Ww==}
+  /@medusajs/medusa-cli@1.3.23-preview-20240902090509(ulid@2.3.0):
+    resolution: {integrity: sha512-g1P5/V/zFYBFksx0T/qfnjAZ+6VohbZfIOVNuAHKAsfaSzhYB133zIceV1Ume27UPbWEVj0r6YMhRj/XxwPp2g==}
     engines: {node: '>=16'}
     hasBin: true
+    peerDependencies:
+      ulid: ^2.3.0
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
       axios: 0.21.4
       chalk: 4.1.2
       configstore: 5.0.1
-      core-js: 3.38.1
       dotenv: 16.4.5
       execa: 5.1.1
       fs-exists-cached: 1.0.0
@@ -1121,13 +1141,12 @@ packages:
       inquirer: 8.2.6
       is-valid-path: 0.1.1
       meant: 1.0.3
-      medusa-telemetry: 0.0.18-preview-20240822060554
+      medusa-telemetry: 0.0.18-preview-20240902090509
       open: 8.4.2
       ora: 5.4.1
       pg: 8.11.3
       pg-god: 1.0.12
       prompts: 2.4.2
-      regenerator-runtime: 0.13.11
       resolve-cwd: 3.0.0
       semver: 7.6.3
       stack-trace: 0.0.10
@@ -1155,20 +1174,20 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/medusa@1.20.6-preview-20240822060554(@babel/runtime@7.25.0)(@types/ioredis-mock@8.2.5)(@types/react-dom@18.3.0)(@types/react@18.3.4)(pg@8.11.3)(react-dom@18.3.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-gjCsqsSe5zjjOqvxZ6Ne+0qrEYO9Vn9qj4lUlCKYn9v27BpPhXfY6eCXyHvfGstRAShFOl3Ejaflrw2A7HIyWg==}
+  /@medusajs/medusa@1.20.6-preview-20240902090509(@babel/runtime@7.25.0)(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)(@types/ioredis-mock@8.2.5)(@types/react-dom@18.3.0)(@types/react@18.3.4)(awilix@8.0.1)(react-dom@18.3.1)(typescript@5.5.4)(ulid@2.3.0):
+    resolution: {integrity: sha512-J8Fwm2HKzvbWIkAEu7hkMfqJhhOT6cx+7a0KpHEcDeFyPNdW2lythDzQ6+0Lq9JkW+1q3GJnsh3t5n18nWHL3Q==}
     engines: {node: '>=16'}
+    peerDependencies:
+      awilix: ^8.0.1
     dependencies:
       '@inquirer/checkbox': 2.4.7
-      '@medusajs/admin-sdk': 0.0.2-preview-20240822060554(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(express@4.19.2)(react-dom@18.3.1)(typescript@5.5.4)
-      '@medusajs/core-flows': 0.0.10-preview-20240822060554(pg@8.11.3)
-      '@medusajs/framework': 0.0.2-preview-20240822060554(@types/ioredis-mock@8.2.5)(pg@8.11.3)
-      '@medusajs/link-modules': 0.2.12-preview-20240822060554(pg@8.11.3)
-      '@medusajs/medusa-cli': 1.3.23-preview-20240822060554
-      '@medusajs/modules-sdk': 1.13.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240822060554(pg@8.11.3)
+      '@inquirer/input': 2.2.9
+      '@medusajs/admin-sdk': 0.0.2-preview-20240902090509(@babel/runtime@7.25.0)(@types/react-dom@18.3.0)(@types/react@18.3.4)(express@4.19.2)(react-dom@18.3.1)(typescript@5.5.4)
+      '@medusajs/core-flows': 0.0.10-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
+      '@medusajs/framework': 0.0.2-preview-20240902090509(@mikro-orm/core@5.9.7)(@types/ioredis-mock@8.2.5)(awilix@8.0.1)(ulid@2.3.0)
+      '@medusajs/link-modules': 0.2.12-preview-20240902090509(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
       '@swc/core': 1.5.7(@swc/helpers@0.5.12)
       '@swc/helpers': 0.5.12
       awilix: 8.0.1
@@ -1179,40 +1198,31 @@ packages:
       compression: 1.7.4
       connect-redis: 5.2.0
       cookie-parser: 1.4.6
-      core-js: 3.38.1
       cors: 2.8.5
-      dotenv: 16.4.5
       express: 4.19.2
-      express-session: 1.18.0
       fs-exists-cached: 1.0.0
       glob: 7.2.3
-      ioredis: 5.4.1
-      ioredis-mock: 8.4.0(@types/ioredis-mock@8.2.5)(ioredis@5.4.1)
       lodash: 4.17.21
-      medusa-telemetry: 0.0.18-preview-20240822060554
-      morgan: 1.10.0
+      medusa-telemetry: 0.0.18-preview-20240902090509
       multer: 1.4.5-lts.1
       node-schedule: 2.1.1
-      passport: 0.6.0
-      passport-custom: 1.1.1
-      passport-jwt: 4.0.1
-      passport-local: 1.0.0
       qs: 6.13.0
-      reflect-metadata: 0.1.13
-      regenerator-runtime: 0.13.11
       request-ip: 3.3.0
+      slugify: 1.6.6
       uuid: 9.0.1
       zod: 3.22.4
     transitivePeerDependencies:
       - '@babel/runtime'
       - '@emotion/is-prop-valid'
       - '@mikro-orm/better-sqlite'
+      - '@mikro-orm/core'
       - '@mikro-orm/entity-generator'
       - '@mikro-orm/mariadb'
       - '@mikro-orm/migrations'
       - '@mikro-orm/migrations-mongodb'
       - '@mikro-orm/mongodb'
       - '@mikro-orm/mysql'
+      - '@mikro-orm/postgresql'
       - '@mikro-orm/seeder'
       - '@mikro-orm/sqlite'
       - '@types/ioredis-mock'
@@ -1227,7 +1237,6 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - picomatch
       - react-dom
@@ -1242,19 +1251,23 @@ packages:
       - terser
       - ts-node
       - typescript
+      - ulid
     dev: true
 
-  /@medusajs/modules-sdk@1.13.0-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-B/gBCe++xKlWjkLWL6Bi7XKEKyY0g7cOlMIty/1WFYKh/n7otXfYUs8MxTcZ6PRmWOdsKI5pSWUVnaWx4T7bjg==}
+  /@medusajs/modules-sdk@1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1):
+    resolution: {integrity: sha512-mOtDb1s7KpGxAdDmYyjMQc418RZMhjojSuAUyyuXnf6QtUYAeLfSoiFFPwtxJhtHRqs9+o8/ycpDhipqrEsuZQ==}
     engines: {node: '>=16'}
+    peerDependencies:
+      '@mikro-orm/core': 5.9.7
+      awilix: ^8.0.1
     dependencies:
       '@graphql-tools/merge': 9.0.6(graphql@16.9.0)
       '@graphql-tools/schema': 10.0.6(graphql@16.9.0)
-      '@medusajs/orchestration': 0.5.8-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240902090509(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
+      '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       awilix: 8.0.1
       graphql: 16.9.0
-      knex: 2.4.2(pg@8.11.3)
       resolve-cwd: 3.0.0
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
@@ -1270,52 +1283,19 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
       - tedious
     dev: true
 
-  /@medusajs/modules-sdk@1.13.0-preview-20240822090439(pg@8.11.3):
-    resolution: {integrity: sha512-rtlxqQWZMFOg3QhQLOoRwf+pww2y/tMASSUfBAdf8J/iV0Hjf6lY4C1/WLCa4uwLaOr6ya74Zp8qPSuxAoq5DA==}
+  /@medusajs/orchestration@0.5.8-preview-20240902090509(awilix@8.0.1):
+    resolution: {integrity: sha512-86iZw5rK9jXewushd6HJGMZReeeJT6bayybsbciA2WtHqZI2TScuDi9CTL4M8TlAgKGkUYsIAQ9SuesULnDfAw==}
     engines: {node: '>=16'}
+    peerDependencies:
+      awilix: ^8.0.1
     dependencies:
-      '@graphql-tools/merge': 9.0.6(graphql@16.9.0)
-      '@graphql-tools/schema': 10.0.6(graphql@16.9.0)
-      '@medusajs/orchestration': 0.5.8-preview-20240822090439(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822090439(pg@8.11.3)
-      awilix: 8.0.1
-      graphql: 16.9.0
-      knex: 2.4.2(pg@8.11.3)
-      resolve-cwd: 3.0.0
-    transitivePeerDependencies:
-      - '@mikro-orm/better-sqlite'
-      - '@mikro-orm/entity-generator'
-      - '@mikro-orm/mariadb'
-      - '@mikro-orm/migrations-mongodb'
-      - '@mikro-orm/mongodb'
-      - '@mikro-orm/mysql'
-      - '@mikro-orm/seeder'
-      - '@mikro-orm/sqlite'
-      - '@types/node'
-      - better-sqlite3
-      - mssql
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-    dev: true
-
-  /@medusajs/orchestration@0.5.8-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-5L2/CGlYsshTHS0GTZumAJlvkPcerdqD8el7IUktgD0ynqnRh37KIHFuTLPOy0ctUciYTu3sjcLqTTdunCrtig==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@medusajs/types': 1.12.0-preview-20240822060554
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
       awilix: 8.0.1
       graphql: 16.9.0
     transitivePeerDependencies:
@@ -1332,59 +1312,24 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
       - tedious
     dev: true
 
-  /@medusajs/orchestration@0.5.8-preview-20240822090439(pg@8.11.3):
-    resolution: {integrity: sha512-bk2lMqKYkQgQRa+Fz7RuOKJ5OIKKpMSuGvBNT1Qcglc9Uvwmta4BR95MCnhcGbZBEwY05GPFSLwYJl3wKzB+Iw==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@medusajs/types': 1.12.0-preview-20240822090439
-      '@medusajs/utils': 1.12.0-preview-20240822090439(pg@8.11.3)
-      awilix: 8.0.1
-      graphql: 16.9.0
-    transitivePeerDependencies:
-      - '@mikro-orm/better-sqlite'
-      - '@mikro-orm/entity-generator'
-      - '@mikro-orm/mariadb'
-      - '@mikro-orm/migrations-mongodb'
-      - '@mikro-orm/mongodb'
-      - '@mikro-orm/mysql'
-      - '@mikro-orm/seeder'
-      - '@mikro-orm/sqlite'
-      - '@types/node'
-      - better-sqlite3
-      - mssql
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-    dev: true
-
-  /@medusajs/types@1.12.0-preview-20240822060554:
-    resolution: {integrity: sha512-ykazMeFq7lPOjHcIcrQb/t5j9K/joTD2lWwLvetgeBgeJkHv1b8q+8ft6pVBs/8H2nvFYMY/4j55vQ/DyXRG0Q==}
+  /@medusajs/types@1.12.0-preview-20240902090509:
+    resolution: {integrity: sha512-FV25+7bKNeoj2WegYcndQXmvxNft6JQUK7K4ePRmGKY6GMN0n4YoACD6ctGc90J9ggeM+yfxJfPgvN9++BBcgw==}
     engines: {node: '>=16'}
     dev: true
 
-  /@medusajs/types@1.12.0-preview-20240822090439:
-    resolution: {integrity: sha512-ccV5x+nemwuxTAC6v7kIYU7XecKa5ww2a74YET+42PwF25iFtZ+uu9wr1I/Zz+rpRNqVYWi6dDtN42U0yF6QWw==}
-    engines: {node: '>=16'}
-    dev: true
-
-  /@medusajs/ui@3.0.1-preview-20240822060554(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-hyvHf53PDGID0ycdFDq+JwLihIMhqqtEkPdF4cHGjF2wswJ48B9/R1k1OY2kg40PP8nOxEiSb4rr0fk9EzTYLw==}
+  /@medusajs/ui@3.0.1-preview-20240902090509(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4):
+    resolution: {integrity: sha512-T6FNYTYt/2NTbKrgqAT+KsjuA7nVX4gGxPSFDrm7QcyDhF+B+46iUd18vvQG7miPLo04rHy0tw7kaNxHJ2Oe0g==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@medusajs/icons': 1.2.2-preview-20240822060554(react@18.3.1)
+      '@medusajs/icons': 1.2.2-preview-20240902090509(react@18.3.1)
       '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
       '@radix-ui/react-alert-dialog': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
       '@radix-ui/react-avatar': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
@@ -1419,65 +1364,58 @@ packages:
       - typescript
     dev: true
 
-  /@medusajs/ui@3.0.1-preview-20240826120715(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)(typescript@5.5.4):
-    resolution: {integrity: sha512-S7bFSuYIqEgvvk3L3Dxt6llP4Md/GPZwsaIDXK/fSnPYM12naDq7lnyWMQUEvz4S4M4DKkWaO5UT7nxRiw17CA==}
+  /@medusajs/utils@1.12.0-preview-20240902090509:
+    resolution: {integrity: sha512-RABzjXzT0IP1HiCt8Bmwubc1ejncjldswVn9PlLuuYRhv/oouk875KFJM/BxfkHXfoC2ZK9XmLzKYxnhyJyVfA==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@medusajs/types': 1.12.0-preview-20240902090509
+      '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
+      '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
+      awilix: 8.0.1
+      bignumber.js: 9.1.2
+      dotenv: 16.4.5
+      dotenv-expand: 11.0.6
+      jsonwebtoken: 9.0.2
+      pg: 8.12.0
+      pg-connection-string: 2.6.4
+      pluralize: 8.0.0
+      ulid: 2.3.0
+    transitivePeerDependencies:
+      - '@mikro-orm/better-sqlite'
+      - '@mikro-orm/entity-generator'
+      - '@mikro-orm/mariadb'
+      - '@mikro-orm/migrations-mongodb'
+      - '@mikro-orm/mongodb'
+      - '@mikro-orm/mysql'
+      - '@mikro-orm/seeder'
+      - '@mikro-orm/sqlite'
+      - '@types/node'
+      - better-sqlite3
+      - mssql
+      - mysql
+      - mysql2
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+    dev: true
+
+  /@medusajs/workflows-sdk@0.1.7-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
+    resolution: {integrity: sha512-DWAVgTCtNXTydct+VeDs2LHYnv+4vLX9aVCb+GMybB51ijFCHpC1FjG9ImvNS8ixcJywMqOURCCTIWbjx5WaqA==}
+    engines: {node: '>=16'}
     peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
+      awilix: ^8.0.1
+      ulid: ^2.3.0
     dependencies:
-      '@medusajs/icons': 1.2.2-preview-20240826120715(react@18.3.1)
-      '@radix-ui/react-accordion': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-alert-dialog': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-avatar': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-checkbox': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-dialog': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-dropdown-menu': 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-label': 2.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-popover': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-portal': 1.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-radio-group': 1.2.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-select': 2.1.1(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-slot': 1.1.0(@types/react@18.3.4)(react@18.3.1)
-      '@radix-ui/react-switch': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-tabs': 1.1.0(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      '@radix-ui/react-tooltip': 1.1.2(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1)(react@18.3.1)
-      clsx: 1.2.1
-      copy-to-clipboard: 3.3.3
-      cva: 1.0.0-beta.1(typescript@5.5.4)
-      prism-react-renderer: 2.3.1(react@18.3.1)
-      prismjs: 1.29.0
-      react: 18.3.1
-      react-aria: 3.34.3(react-dom@18.3.1)(react@18.3.1)
-      react-currency-input-field: 3.8.0(react@18.3.1)
-      react-dom: 18.3.1(react@18.3.1)
-      react-stately: 3.32.2(react@18.3.1)
-      sonner: 1.5.0(react-dom@18.3.1)(react@18.3.1)
-      tailwind-merge: 2.5.2
-      upgrade: 1.1.0
-    transitivePeerDependencies:
-      - '@types/react'
-      - '@types/react-dom'
-      - typescript
-    dev: true
-
-  /@medusajs/utils@1.12.0-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-6dGYoVTN+hmVhBo8uXu6BqF/yC0UVW7Xdk5DUWmtrvkoZLonh0FGXyBsotNQulngS7rzZhc4NcwLali6w8s1fQ==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@medusajs/types': 1.12.0-preview-20240822060554
-      '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
-      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3)
-      '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240902090509(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/orchestration': 0.5.8-preview-20240902090509(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240902090509
       awilix: 8.0.1
-      bignumber.js: 9.1.2
-      dotenv: 16.4.5
-      json-2-csv: 5.5.5
-      jsonwebtoken: 9.0.2
-      knex: 2.4.2(pg@8.11.3)
-      pluralize: 8.0.0
       ulid: 2.3.0
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
+      - '@mikro-orm/core'
       - '@mikro-orm/entity-generator'
       - '@mikro-orm/mariadb'
       - '@mikro-orm/migrations-mongodb'
@@ -1490,74 +1428,6 @@ packages:
       - mssql
       - mysql
       - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-    dev: true
-
-  /@medusajs/utils@1.12.0-preview-20240822090439(pg@8.11.3):
-    resolution: {integrity: sha512-i2HPIibHasojwKMVlZwJSVwJ1MnNmEghVK1YI7Aauqb4iJhAaO44ChMe89FwLQJNBajBo9xXfTuoM3JqleUFCg==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@medusajs/types': 1.12.0-preview-20240822090439
-      '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
-      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3)
-      '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
-      awilix: 8.0.1
-      bignumber.js: 9.1.2
-      dotenv: 16.4.5
-      json-2-csv: 5.5.5
-      jsonwebtoken: 9.0.2
-      knex: 2.4.2(pg@8.11.3)
-      pluralize: 8.0.0
-      ulid: 2.3.0
-    transitivePeerDependencies:
-      - '@mikro-orm/better-sqlite'
-      - '@mikro-orm/entity-generator'
-      - '@mikro-orm/mariadb'
-      - '@mikro-orm/migrations-mongodb'
-      - '@mikro-orm/mongodb'
-      - '@mikro-orm/mysql'
-      - '@mikro-orm/seeder'
-      - '@mikro-orm/sqlite'
-      - '@types/node'
-      - better-sqlite3
-      - mssql
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-    dev: true
-
-  /@medusajs/workflows-sdk@0.1.7-preview-20240822060554(pg@8.11.3):
-    resolution: {integrity: sha512-FyB2WRMMkv1ZAp6Re2Qqu2lu7nKTm/3xUzR99n3EPJwWRb5BN3zw9A8MR+4GSqH3qLG3HOx5wL/NNs8svisC/Q==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240822060554(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240822060554(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240822060554(pg@8.11.3)
-      awilix: 8.0.1
-      ulid: 2.3.0
-    transitivePeerDependencies:
-      - '@mikro-orm/better-sqlite'
-      - '@mikro-orm/entity-generator'
-      - '@mikro-orm/mariadb'
-      - '@mikro-orm/migrations-mongodb'
-      - '@mikro-orm/mongodb'
-      - '@mikro-orm/mysql'
-      - '@mikro-orm/seeder'
-      - '@mikro-orm/sqlite'
-      - '@types/node'
-      - better-sqlite3
-      - mssql
-      - mysql
-      - mysql2
-      - pg
       - pg-native
       - sqlite3
       - supports-color
@@ -1600,7 +1470,7 @@ packages:
       '@mikro-orm/sqlite':
         optional: true
     dependencies:
-      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
       acorn-loose: 8.3.0
       acorn-walk: 8.2.0
@@ -1643,7 +1513,7 @@ packages:
         optional: true
     dependencies:
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
-      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
       fs-extra: 11.1.1
       knex: 2.5.1(pg@8.11.3)
       pg: 8.11.3
@@ -1654,16 +1524,59 @@ packages:
       - tedious
     dev: true
 
-  /@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3):
+  /@mikro-orm/knex@5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(pg@8.12.0):
+    resolution: {integrity: sha512-LmyoXPXrEtTJ4/D/2/ppWMjRxIHwyk/E/2SNz28/fmN+nK9of6Sqa0ql6M0WJRNxYOxLiVOGZWy1fGJAGW3lCg==}
+    engines: {node: '>= 14.0.0'}
+    peerDependencies:
+      '@mikro-orm/core': ^5.0.0
+      '@mikro-orm/entity-generator': ^5.0.0
+      '@mikro-orm/migrations': ^5.0.0
+      better-sqlite3: '*'
+      mssql: '*'
+      mysql: '*'
+      mysql2: '*'
+      pg: '*'
+      sqlite3: '*'
+    peerDependenciesMeta:
+      '@mikro-orm/entity-generator':
+        optional: true
+      '@mikro-orm/migrations':
+        optional: true
+      better-sqlite3:
+        optional: true
+      mssql:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      sqlite3:
+        optional: true
+    dependencies:
+      '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
+      fs-extra: 11.1.1
+      knex: 2.5.1(pg@8.12.0)
+      pg: 8.12.0
+      sqlstring: 2.3.3
+    transitivePeerDependencies:
+      - pg-native
+      - supports-color
+      - tedious
+    dev: true
+
+  /@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0):
     resolution: {integrity: sha512-5CFVIwmGMxN7p7Rs3KRQmYlDVy47DN2MJQqtDOSVG9ww0xzOP0suCLDA/yRG1uFcPnTn/Ru6lwAH6nllqV75FQ==}
     engines: {node: '>= 14.0.0'}
     peerDependencies:
       '@mikro-orm/core': ^5.0.0
     dependencies:
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
-      '@mikro-orm/knex': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(pg@8.11.3)
+      '@mikro-orm/knex': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(pg@8.12.0)
       fs-extra: 11.1.1
-      knex: 2.5.1(pg@8.11.3)
+      knex: 2.5.1(pg@8.12.0)
       umzug: 3.3.1
     transitivePeerDependencies:
       - '@mikro-orm/entity-generator'
@@ -1697,7 +1610,7 @@ packages:
     dependencies:
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/knex': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(pg@8.11.3)
-      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.11.3)
+      '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
       pg: 8.11.3
     transitivePeerDependencies:
       - better-sqlite3
@@ -4483,14 +4396,14 @@ packages:
       react: 18.3.1
     dev: true
 
-  /@tanstack/react-table@8.10.7(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-bXhjA7xsTcsW8JPTTYlUg/FuBpn8MNjiEPhkNhIGCUR6iRQM2+WEco4OBpvDeVcR9SE+bmWLzdfiY7bCbCSVuA==}
+  /@tanstack/react-table@8.20.5(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-WEHopKw3znbUZ61s9i0+i9g8drmDo6asTWbrQh8Us63DAk/M0FkmIqERew6P71HI75ksZ2Pxyuf4vvKh9rAkiA==}
     engines: {node: '>=12'}
     peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
+      react: '>=16.8'
+      react-dom: '>=16.8'
     dependencies:
-      '@tanstack/table-core': 8.10.7
+      '@tanstack/table-core': 8.20.5
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     dev: true
@@ -4506,8 +4419,8 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
     dev: true
 
-  /@tanstack/table-core@8.10.7:
-    resolution: {integrity: sha512-KQk5OMg5OH6rmbHZxuNROvdI+hKDIUxANaHlV+dPlNN7ED3qYQ/WkpY2qlXww1SIdeMlkIhpN/2L00rof0fXFw==}
+  /@tanstack/table-core@8.20.5:
+    resolution: {integrity: sha512-P9dF7XbibHph2PFRz8gfBKEXEY/HJPOhym8CHmjF8y3q5mWpKx9xtZapXQUWCgkqvsK0R46Azuz+VaxD4Xl+Tg==}
     engines: {node: '>=12'}
     dev: true
 
@@ -5352,11 +5265,6 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /commander@9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
-    dev: true
-
   /compressible@2.0.18:
     resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
     engines: {node: '>= 0.6'}
@@ -5465,11 +5373,6 @@ packages:
     resolution: {integrity: sha512-2KV8NhB5JqC3ky0r9PMCAZKbUHSwtEo4CwCs0KXgruG43gX5PMqDEBbVU4OUzw2MuAWUfsuFmWvEKG5QRfSnJA==}
     dependencies:
       toggle-selection: 1.0.6
-    dev: true
-
-  /core-js@3.38.1:
-    resolution: {integrity: sha512-OP35aUorbU3Zvlx7pjsFdu1rGNnD4pgw/CWoYzRY3t2EzoVT7shKHY1dlAy3f41cGIO7ZDPQimhGFTlEYkG/Hw==}
-    requiresBuild: true
     dev: true
 
   /core-util-is@1.0.3:
@@ -5707,6 +5610,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-obj: 2.0.0
+    dev: true
+
+  /dotenv-expand@11.0.6:
+    resolution: {integrity: sha512-8NHi73otpWsZGBSZwwknTXS5pqMOrk9+Ssrna8xCaxkzEpU9OTf9R5ArQGVw03//Zmk9MOwLPng9WwndvpAJ5g==}
+    engines: {node: '>=12'}
+    dependencies:
+      dotenv: 16.4.5
     dev: true
 
   /dotenv@16.3.1:
@@ -7043,53 +6953,6 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /knex@2.4.2(pg@8.11.3):
-    resolution: {integrity: sha512-tMI1M7a+xwHhPxjbl/H9K1kHX+VncEYcvCx5K00M16bWvpYPKAZd6QrCu68PtHAdIZNQPWZn0GVhqVBEthGWCg==}
-    engines: {node: '>=12'}
-    hasBin: true
-    peerDependencies:
-      better-sqlite3: '*'
-      mysql: '*'
-      mysql2: '*'
-      pg: '*'
-      pg-native: '*'
-      sqlite3: '*'
-      tedious: '*'
-    peerDependenciesMeta:
-      better-sqlite3:
-        optional: true
-      mysql:
-        optional: true
-      mysql2:
-        optional: true
-      pg:
-        optional: true
-      pg-native:
-        optional: true
-      sqlite3:
-        optional: true
-      tedious:
-        optional: true
-    dependencies:
-      colorette: 2.0.19
-      commander: 9.5.0
-      debug: 4.3.4(supports-color@8.1.1)
-      escalade: 3.1.2
-      esm: 3.2.25
-      get-package-type: 0.1.0
-      getopts: 2.3.0
-      interpret: 2.2.0
-      lodash: 4.17.21
-      pg: 8.11.3
-      pg-connection-string: 2.5.0
-      rechoir: 0.8.0
-      resolve-from: 5.0.0
-      tarn: 3.0.2
-      tildify: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /knex@2.5.1(pg@8.11.3):
     resolution: {integrity: sha512-z78DgGKUr4SE/6cm7ku+jHvFT0X97aERh/f0MUKAKgFnwCYBEW4TFBqtHWFYiJFid7fMrtpZ/gxJthvz5mEByA==}
     engines: {node: '>=12'}
@@ -7128,6 +6991,53 @@ packages:
       interpret: 2.2.0
       lodash: 4.17.21
       pg: 8.11.3
+      pg-connection-string: 2.6.1
+      rechoir: 0.8.0
+      resolve-from: 5.0.0
+      tarn: 3.0.2
+      tildify: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /knex@2.5.1(pg@8.12.0):
+    resolution: {integrity: sha512-z78DgGKUr4SE/6cm7ku+jHvFT0X97aERh/f0MUKAKgFnwCYBEW4TFBqtHWFYiJFid7fMrtpZ/gxJthvz5mEByA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    peerDependencies:
+      better-sqlite3: '*'
+      mysql: '*'
+      mysql2: '*'
+      pg: '*'
+      pg-native: '*'
+      sqlite3: '*'
+      tedious: '*'
+    peerDependenciesMeta:
+      better-sqlite3:
+        optional: true
+      mysql:
+        optional: true
+      mysql2:
+        optional: true
+      pg:
+        optional: true
+      pg-native:
+        optional: true
+      sqlite3:
+        optional: true
+      tedious:
+        optional: true
+    dependencies:
+      colorette: 2.0.19
+      commander: 10.0.1
+      debug: 4.3.4(supports-color@8.1.1)
+      escalade: 3.1.2
+      esm: 3.2.25
+      get-package-type: 0.1.0
+      getopts: 2.3.0
+      interpret: 2.2.0
+      lodash: 4.17.21
+      pg: 8.12.0
       pg-connection-string: 2.6.1
       rechoir: 0.8.0
       resolve-from: 5.0.0
@@ -7306,8 +7216,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /medusa-telemetry@0.0.18-preview-20240822060554:
-    resolution: {integrity: sha512-PccmrGU9Aaiua1ie53rIi6T6eHLBPqRnUsIxG0sqa/B08PSy8JJs1wC+xEtXgrFyKwuwQ6poyCVTlA1U1pKllw==}
+  /medusa-telemetry@0.0.18-preview-20240902090509:
+    resolution: {integrity: sha512-0nBKhoHHTJ2Xv1dwz6NL1z3W0YTUl9UdSgrwTkNsjs9BHbxwN6cKapUuULQWhCeUMFNTn8go4KzOjjZ7DUHw3g==}
     engines: {node: '>=16'}
     requiresBuild: true
     dependencies:
@@ -7808,41 +7718,6 @@ packages:
       tslib: 2.6.3
     dev: true
 
-  /passport-custom@1.1.1:
-    resolution: {integrity: sha512-/2m7jUGxmCYvoqenLB9UrmkCgPt64h8ZtV+UtuQklZ/Tn1NpKBeOorCYkB/8lMRoiZ5hUrCoMmDtxCS/d38mlg==}
-    engines: {node: '>= 0.10.0'}
-    dependencies:
-      passport-strategy: 1.0.0
-    dev: true
-
-  /passport-jwt@4.0.1:
-    resolution: {integrity: sha512-UCKMDYhNuGOBE9/9Ycuoyh7vP6jpeTp/+sfMJl7nLff/t6dps+iaeE0hhNkKN8/HZHcJ7lCdOyDxHdDoxoSvdQ==}
-    dependencies:
-      jsonwebtoken: 9.0.2
-      passport-strategy: 1.0.0
-    dev: true
-
-  /passport-local@1.0.0:
-    resolution: {integrity: sha512-9wCE6qKznvf9mQYYbgJ3sVOHmCWoUNMVFoZzNoznmISbhnNNPhN9xfY3sLmScHMetEJeoY7CXwfhCe7argfQow==}
-    engines: {node: '>= 0.4.0'}
-    dependencies:
-      passport-strategy: 1.0.0
-    dev: true
-
-  /passport-strategy@1.0.0:
-    resolution: {integrity: sha512-CB97UUvDKJde2V0KDWWB3lyf6PC3FaZP7YxZ2G8OAtn9p4HI9j9JLP9qjOGZFvyl8uwNT8qM+hGnz/n16NI7oA==}
-    engines: {node: '>= 0.4.0'}
-    dev: true
-
-  /passport@0.6.0:
-    resolution: {integrity: sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug==}
-    engines: {node: '>= 0.4.0'}
-    dependencies:
-      passport-strategy: 1.0.0
-      pause: 0.0.1
-      utils-merge: 1.0.1
-    dev: true
-
   /password-prompt@1.1.3:
     resolution: {integrity: sha512-HkrjG2aJlvF0t2BMH0e2LB/EHf3Lcq3fNMzy4GYHcQblAvOl+QQji1Lx7WRBMqpVK8p+KR7bCg7oqAMXtdgqyw==}
     dependencies:
@@ -7915,10 +7790,6 @@ packages:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
     dev: true
 
-  /pause@0.0.1:
-    resolution: {integrity: sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==}
-    dev: true
-
   /perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
     dev: true
@@ -7928,10 +7799,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /pg-connection-string@2.5.0:
-    resolution: {integrity: sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==}
-    dev: true
 
   /pg-connection-string@2.6.1:
     resolution: {integrity: sha512-w6ZzNu6oMmIzEAYVw+RLK0+nqHPt8K3ZnknKi+g48Ak2pr3dtljJW3o+D/n2zzCG07Zoe9VOX3aiKpj+BN0pjg==}
@@ -7970,6 +7837,14 @@ packages:
       pg: 8.11.3
     dev: true
 
+  /pg-pool@3.6.2(pg@8.12.0):
+    resolution: {integrity: sha512-Htjbg8BlwXqSBQ9V8Vjtc+vzf/6fVUuak/3/XXKA9oxZprwW3IMDQTGHP+KDmVL7rtd+R1QjbnCFPuTHm3G4hg==}
+    peerDependencies:
+      pg: '>=8.0'
+    dependencies:
+      pg: 8.12.0
+    dev: true
+
   /pg-protocol@1.6.1:
     resolution: {integrity: sha512-jPIlvgoD63hrEuihvIg+tJhoGjUsLPn6poJY9N5CnlPd91c2T18T/9zBtLxZSb1EhYxBRoZJtzScCaWlYLtktg==}
     dev: true
@@ -7998,6 +7873,24 @@ packages:
       packet-reader: 1.0.0
       pg-connection-string: 2.6.4
       pg-pool: 3.6.2(pg@8.11.3)
+      pg-protocol: 1.6.1
+      pg-types: 2.2.0
+      pgpass: 1.0.5
+    optionalDependencies:
+      pg-cloudflare: 1.1.1
+    dev: true
+
+  /pg@8.12.0:
+    resolution: {integrity: sha512-A+LHUSnwnxrnL/tZ+OLfqR1SxLN3c/pgDztZ47Rpbsd4jUytsTtwQo/TLPRzPJMp/1pbhYVhH9cuSZLAajNfjQ==}
+    engines: {node: '>= 8.0.0'}
+    peerDependencies:
+      pg-native: '>=3.0.1'
+    peerDependenciesMeta:
+      pg-native:
+        optional: true
+    dependencies:
+      pg-connection-string: 2.6.4
+      pg-pool: 3.6.2(pg@8.12.0)
       pg-protocol: 1.6.1
       pg-types: 2.2.0
       pgpass: 1.0.5
@@ -8331,6 +8224,21 @@ packages:
       scheduler: 0.23.2
     dev: true
 
+  /react-fast-compare@3.2.2:
+    resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
+    dev: true
+
+  /react-helmet-async@2.0.5(react@18.3.1):
+    resolution: {integrity: sha512-rYUYHeus+i27MvFE+Jaa4WsyBKGkL6qVgbJvSBoX8mbsWoABJXdEO0bZyi0F6i+4f0NuIb8AvqPMj3iXFHkMwg==}
+    peerDependencies:
+      react: ^16.6.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      invariant: 2.2.4
+      react: 18.3.1
+      react-fast-compare: 3.2.2
+      shallowequal: 1.1.0
+    dev: true
+
   /react-hook-form@7.49.1(react@18.3.1):
     resolution: {integrity: sha512-MId71bfWmpyvwuWjVTe2b4DRc0jIYOb/B9tlrotEHTuHlQGeX1x2QXfjNe9UtMi6TqhO0bsSdSWgjcUFh2fSww==}
     engines: {node: '>=18', pnpm: '8'}
@@ -8612,10 +8520,6 @@ packages:
     resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
     dev: true
 
-  /regenerator-runtime@0.13.11:
-    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-    dev: true
-
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
     dev: true
@@ -8871,6 +8775,10 @@ packages:
     resolution: {integrity: sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==}
     dev: true
 
+  /shallowequal@1.1.0:
+    resolution: {integrity: sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==}
+    dev: true
+
   /shebang-command@1.2.0:
     resolution: {integrity: sha512-EV3L1+UQWGor21OmnvojK36mhg+TyIKDh3iFBKBohr5xeXIhNBcx8oWdgkTEEQ+BEFFYdLRuqMfd5L84N1V5Vg==}
     engines: {node: '>=0.10.0'}
@@ -8931,6 +8839,11 @@ packages:
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+    dev: true
+
+  /slugify@1.6.6:
+    resolution: {integrity: sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==}
+    engines: {node: '>=8.0.0'}
     dev: true
 
   /sonner@1.5.0(react-dom@18.3.1)(react@18.3.1):
