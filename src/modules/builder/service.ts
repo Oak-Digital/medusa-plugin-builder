@@ -7,6 +7,8 @@ import { ProductCategoryDTO, ProductDTO, ProductOptionDTO, ProductOptionValueDTO
 import BuilderWriteApiService from "./services/write-api";
 import { BuilderModuleOptions, builderModuleOptionsSchema } from "./config";
 import BuilderContentApiService from "./services/content-api";
+import { Effect } from "effect";
+import { ConfigurationError } from "../../lib/errors/configuration";
 
 export default class BuilderModuleService extends MedusaService({}) {
     protected readonly options_: BuilderModuleOptions;
@@ -23,81 +25,114 @@ export default class BuilderModuleService extends MedusaService({}) {
         this.builderContentApi = new BuilderContentApiService(container, parsedOptions);
     }
 
-    public async onProductCreated(product: ProductDTO) {
-        const productConfig = this.options_.models.product;
-        if (!productConfig) {
-            return;
-        }
-        const modelName = productConfig.modelName;
-        const response = await this.builderWriteApi.createModel(modelName, product.title, productConfig.transform(product));
-        return response;
+    private getProductConfig() {
+        const initialProductConfig = this.options_.models.product;
+        return initialProductConfig ?
+            Effect.succeed(initialProductConfig) :
+            Effect.fail(new ConfigurationError('Product config is not defined'));
     }
 
-    public async onCategoryCreated(category: ProductCategoryDTO) {
-        const categoryConfig = this.options_.models.category;
-        if (!categoryConfig) {
-            return;
-        }
-        const modelName = categoryConfig.modelName;
-        const response = await this.builderWriteApi.createModel(modelName, category.name, categoryConfig.transform(category));
-        return response;
+    public onProductCreated(product: ProductDTO) {
+        return Effect.gen(this, function*() {
+            const productConfig = yield* this.getProductConfig();
+            const modelName = productConfig.modelName;
+            const transformedProduct = yield* Effect.try({
+                try() {
+                    return productConfig.transform(product);
+                },
+                catch() {
+                    return new ConfigurationError(`Error transforming product: ${JSON.stringify(product)}`);
+                },
+            });
+            const response = yield* this.builderWriteApi.createModel(modelName, product.title, transformedProduct);
+            return response;
+        });
+    }
+
+    private getCategoryConfig() {
+        const initialCategoryConfig = this.options_.models.category;
+        return initialCategoryConfig ?
+            Effect.succeed(initialCategoryConfig) :
+            Effect.fail(new ConfigurationError('Category config is not defined'));
+    }
+
+    public onCategoryCreated(category: ProductCategoryDTO) {
+        return Effect.gen(this, function*() {
+            const categoryConfig = yield* this.getCategoryConfig();
+            const transformedCategory = yield* Effect.try({
+                try() {
+                    return categoryConfig.transform(category);
+                },
+                catch() {
+                    return new ConfigurationError(`Error transforming category: ${JSON.stringify(category)}`);
+                },
+            });
+            const modelName = categoryConfig.modelName;
+            const response = yield* this.builderWriteApi.createModel(modelName, category.name, transformedCategory);
+            return response;
+
+        });
     }
 
     /**
     * @returns the builder id of the option value if it exists
     */
-    public async checkProductOptionValueExists(option: ProductOptionDTO, value: ProductOptionValueDTO): Promise<string | null> {
-        const productOptionWithValueConfig = this.options_.models.productOptionWithValue;
-        if (!productOptionWithValueConfig) {
-            // return;
-            throw new Error('Product option with value config is not defined');
-        }
-        const retrieveObj = productOptionWithValueConfig.transformToRetrieve({
-            option,
-            value,
-        });
-
-        const query: {
-            [key: string]: {
-                $eq: string,
-            };
-        } = {};
-
-        Object.entries(retrieveObj).forEach(([key, value]) => {
-            query[key] = {
-                $eq: value,
-            };
-        });
-
-        try {
-            const response = await this.builderContentApi.retrieveModel(productOptionWithValueConfig.modelName, {
-                data: query,
+    public checkProductOptionValueExists(option: ProductOptionDTO, value: ProductOptionValueDTO) {
+        return Effect.gen(this, function*() {
+            const productOptionWithValueConfig = yield* this.getProductOptionWithValueConfig();
+            const retrieveObj = yield* Effect.try({
+                try() {
+                    return productOptionWithValueConfig.transformToRetrieve({
+                        option,
+                        value,
+                    });
+                },
+                catch() {
+                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`);
+                },
             });
 
-            return response.id;
-        } catch (error) {
-            // TODO: Handle network error
-            console.error(error);
-        }
+            const query: {
+                [key: string]: {
+                    $eq: string,
+                };
+            } = {};
 
-        return null;
+            Object.entries(retrieveObj).forEach(([key, value]) => {
+                query[key] = {
+                    $eq: value,
+                };
+            });
+            const response = yield* this.builderContentApi.retrieveModel(productOptionWithValueConfig.modelName, {
+                data: query,
+            });
+            return response.id;
+        });
     }
 
-    public async saveProductOptionValue(option: ProductOptionDTO, value: ProductOptionValueDTO) {
-        const productOptionWithValueConfig = this.options_.models.productOptionWithValue;
-        if (!productOptionWithValueConfig) {
-            throw new Error('Product option with value config is not defined');
-        }
-        const createObj = productOptionWithValueConfig.transform({
-            option,
-            value,
-        });
+    private getProductOptionWithValueConfig() {
+        return this.options_.models.productOptionWithValue ?
+            Effect.succeed(this.options_.models.productOptionWithValue) :
+            Effect.fail(new ConfigurationError('Product option with value config is not defined'));
+    }
 
-        try {
-            const response = await this.builderWriteApi.createModel(productOptionWithValueConfig.modelName, value.value, createObj);
+    public saveProductOptionValue(option: ProductOptionDTO, value: ProductOptionValueDTO) {
+        return Effect.gen(this, function*() {
+            const productOptionWithValueConfig = yield* this.getProductOptionWithValueConfig();
+            const createObj = yield* Effect.try({
+                try() {
+                    return productOptionWithValueConfig.transform({
+                        option,
+                        value,
+                    });
+                },
+                catch() {
+                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`);
+                },
+            });
+
+            const response = yield* this.builderWriteApi.createModel(productOptionWithValueConfig.modelName, value.value, createObj);
             return response.id;
-        } catch (error) {
-            throw error;
-        }
+        });
     }
 }

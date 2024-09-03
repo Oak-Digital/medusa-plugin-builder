@@ -1,6 +1,7 @@
 import { createStep, StepResponse, createWorkflow, WorkflowResponse } from "@medusajs/workflows-sdk"
 import { ModuleRegistrationName } from "@medusajs/utils";
 import '../modules/implementations';
+import { Effect, Exit } from "effect";
 
 type SaveInBuilderInput = {
     categoryId: string;
@@ -12,7 +13,12 @@ const saveInBuilderStep = createStep("Save category in builder", async (input: S
     const category = await productService.retrieveProductCategory(input.categoryId, {
         relations: ['metadata'],
     });
-    const response = await builderModuleService.onCategoryCreated(category);
+    const responseEffect = builderModuleService.onCategoryCreated(category);
+    const responseExit = await Effect.runPromiseExit(responseEffect);
+    if (Exit.isFailure(responseExit)) {
+        throw responseExit.cause;
+    }
+    const response = responseExit.value;
     return new StepResponse(response);
 });
 

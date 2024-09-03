@@ -2,6 +2,12 @@ import { Zodios } from '@zodios/core';
 import { BuilderModuleOptions, builderModuleOptionsSchema } from "../config";
 import { z } from 'zod';
 import { BuilderModuleContainer } from '../container';
+import { Effect } from 'effect';
+import { AxiosError } from 'axios';
+import { UnknownException } from 'effect/Cause';
+import { HttpError } from '../../../lib/errors/http';
+import { NetworkError } from '../../../lib/errors/network';
+import { transformZodiosError } from '../../../lib/errors/transform-zodios';
 
 const BUILDER_CONTENT_API_BASE = 'https://builder.io/api/v4/content';
 
@@ -53,14 +59,22 @@ export class BuilderContentApiService {
     }
 
     public retrieveModel(modelName: string, query: { [key: string]: unknown }) {
-        return this.getClient().retrieveModel({
-            params: {
-                modelName,
+        const client = this.getClient();
+        const result = Effect.tryPromise({
+            async try(signal) {
+                return client.retrieveModel({
+                    params: {
+                        modelName,
+                    },
+                    queries: {
+                        query,
+                    },
+                });
             },
-            queries: {
-                query,
-            },
+            catch: transformZodiosError,
         });
+
+        return result;
     }
 }
 

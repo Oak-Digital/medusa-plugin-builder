@@ -1,6 +1,7 @@
 import { createStep, StepResponse, createWorkflow, WorkflowResponse } from "@medusajs/workflows-sdk"
 import { ModuleRegistrationName } from "@medusajs/utils";
 import '../modules/implementations';
+import { Cause, Effect, Exit } from "effect";
 
 type SaveInBuilderInput = {
     productId: string;
@@ -12,8 +13,15 @@ const saveInBuilderStep = createStep("Save product in builder", async (input: Sa
     const product = await productService.retrieveProduct(input.productId, {
         relations: ['metadata'],
     });
-    const response = await builderModuleService.onProductCreated(product);
-    return new StepResponse(response);
+    // const response = await builderModuleService.onProductCreated(product);
+    const response = await Effect.runPromiseExit(builderModuleService.onProductCreated(product));
+
+
+    if (Exit.isFailure(response)) {
+        throw response.cause;
+    }
+    const responseValue = response.value;
+    return new StepResponse(responseValue);
 });
 
 type SetBuilderIdOnProductInput = {

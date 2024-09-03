@@ -2,6 +2,8 @@ import { Zodios } from '@zodios/core';
 import { BuilderModuleOptions, builderModuleOptionsSchema } from "../config";
 import { z } from 'zod';
 import { BuilderModuleContainer } from '../container';
+import { Effect } from 'effect';
+import { transformZodiosError } from '../../../lib/errors/transform-zodios';
 
 const BUILDER_WRITE_API_BASE = 'https://builder.io/api/v1/write';
 
@@ -62,16 +64,22 @@ export class BuilderWriteApiService {
         return this.createClient();
     }
 
-    public async createModel(modelName: string, name?: string, data?: { [key: string]: any }) {
+    public createModel(modelName: string, name?: string, data?: { [key: string]: any }) {
         const client = this.getClient();
 
-        const result = await client.createEntry({
-            name,
-            data,
-        }, {
-            params: {
-                modelName,
+        const result = Effect.tryPromise({
+            async try() {
+                const result = await client.createEntry({
+                    name,
+                    data,
+                }, {
+                    params: {
+                        modelName,
+                    },
+                });
+                return result;
             },
+            catch: transformZodiosError,
         });
 
         return result;

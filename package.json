@@ -51,6 +51,7 @@
     "zod": "^3.x"
   },
   "dependencies": {
-    "@zodios/core": "^10.9.6"
+    "@zodios/core": "^10.9.6",
+    "effect": "^3.7.0"
   }
 }
