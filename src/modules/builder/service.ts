@@ -40,8 +40,8 @@ export default class BuilderModuleService extends MedusaService({}) {
                 try() {
                     return productConfig.transform(product);
                 },
-                catch() {
-                    return new ConfigurationError(`Error transforming product: ${JSON.stringify(product)}`);
+                catch(error) {
+                    return new ConfigurationError(`Error transforming product: ${JSON.stringify(product)}`, error);
                 },
             });
             const response = yield* this.builderWriteApi.createModel(modelName, product.title, transformedProduct);
@@ -63,8 +63,8 @@ export default class BuilderModuleService extends MedusaService({}) {
                 try() {
                     return categoryConfig.transform(category);
                 },
-                catch() {
-                    return new ConfigurationError(`Error transforming category: ${JSON.stringify(category)}`);
+                catch(error) {
+                    return new ConfigurationError(`Error transforming category: ${JSON.stringify(category)}`, error);
                 },
             });
             const modelName = categoryConfig.modelName;
@@ -87,8 +87,8 @@ export default class BuilderModuleService extends MedusaService({}) {
                         value,
                     });
                 },
-                catch() {
-                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`);
+                catch(error) {
+                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`, error);
                 },
             });
 
@@ -126,8 +126,8 @@ export default class BuilderModuleService extends MedusaService({}) {
                         value,
                     });
                 },
-                catch() {
-                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`);
+                catch(error) {
+                    return new ConfigurationError(`Error transforming product option value: ${JSON.stringify({ option, value })}`, error);
                 },
             });
 
