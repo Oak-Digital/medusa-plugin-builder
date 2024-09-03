@@ -46,10 +46,11 @@ export default class BuilderModuleService extends MedusaService({}) {
     /**
     * @returns the builder id of the option value if it exists
     */
-    public async checkProductOptionValueExists(option: ProductOptionDTO, value: ProductOptionValueDTO) {
+    public async checkProductOptionValueExists(option: ProductOptionDTO, value: ProductOptionValueDTO): Promise<string | null> {
         const productOptionWithValueConfig = this.options_.models.productOptionWithValue;
         if (!productOptionWithValueConfig) {
-            return;
+            // return;
+            throw new Error('Product option with value config is not defined');
         }
         const retrieveObj = productOptionWithValueConfig.transformToRetrieve({
             option,
@@ -68,8 +69,35 @@ export default class BuilderModuleService extends MedusaService({}) {
             };
         });
 
-        const response = await this.builderContentApi.retrieveModel(productOptionWithValueConfig.modelName, {
-            data: query,
+        try {
+            const response = await this.builderContentApi.retrieveModel(productOptionWithValueConfig.modelName, {
+                data: query,
+            });
+
+            return response.id;
+        } catch (error) {
+            // TODO: Handle network error
+            console.error(error);
+        }
+
+        return null;
+    }
+
+    public async saveProductOptionValue(option: ProductOptionDTO, value: ProductOptionValueDTO) {
+        const productOptionWithValueConfig = this.options_.models.productOptionWithValue;
+        if (!productOptionWithValueConfig) {
+            throw new Error('Product option with value config is not defined');
+        }
+        const createObj = productOptionWithValueConfig.transform({
+            option,
+            value,
         });
+
+        try {
+            const response = await this.builderWriteApi.createModel(productOptionWithValueConfig.modelName, value.value, createObj);
+            return response.id;
+        } catch (error) {
+            throw error;
+        }
     }
 }
