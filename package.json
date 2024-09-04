@@ -19,6 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@medusajs/admin-shared": "preview",
+    "@medusajs/core-flows": "preview",
     "@medusajs/medusa": "preview",
     "@medusajs/modules-sdk": "preview",
     "@medusajs/types": "preview",
