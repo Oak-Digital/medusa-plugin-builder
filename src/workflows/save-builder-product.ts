@@ -14,7 +14,9 @@ const saveInBuilderStep = createStep("Save product in builder", async (input: Sa
         relations: ['metadata'],
     });
     // const response = await builderModuleService.onProductCreated(product);
-    const response = await Effect.runPromiseExit(builderModuleService.onProductCreated(product));
+    const effect = builderModuleService.onProductCreated(product);
+    // FIXME: we should not await here, but somehow we need to.
+    const response = await Effect.runPromiseExit(await effect);
 
 
     if (Exit.isFailure(response)) {

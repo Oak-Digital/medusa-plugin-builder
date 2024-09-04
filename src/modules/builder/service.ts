@@ -33,10 +33,8 @@ export default class BuilderModuleService extends MedusaService({}) {
     }
 
     public onProductCreated(product: ProductDTO) {
-        return Effect.gen(this, function*() {
-            console.log('onProductCreated');
+        const effect = Effect.gen(this, function*() {
             const productConfig = yield* this.getProductConfig();
-            console.log('got product config');
             const modelName = productConfig.modelName;
             const transformedProduct = yield* Effect.try({
                 try() {
@@ -46,11 +44,11 @@ export default class BuilderModuleService extends MedusaService({}) {
                     return new ConfigurationError(`Error transforming product: ${JSON.stringify(product)}`, error);
                 },
             });
-            console.log('transformed product');
             const response = yield* this.builderWriteApi.createModel(modelName, product.title, transformedProduct);
-            console.log('created model', response);
             return response;
         });
+
+        return effect;
     }
 
     private getCategoryConfig() {
