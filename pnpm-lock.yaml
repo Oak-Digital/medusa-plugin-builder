@@ -17,8 +17,8 @@ devDependencies:
     specifier: preview
     version: 0.0.2-preview-20240902090509
   '@medusajs/core-flows':
-    specifier: 0.0.10-preview-20240904090511
-    version: 0.0.10-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
+    specifier: preview
+    version: 0.0.10-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
   '@medusajs/medusa':
     specifier: preview
     version: 1.20.6-preview-20240902090509(@babel/runtime@7.25.0)(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)(@types/ioredis-mock@8.2.5)(@types/react-dom@18.3.0)(@types/react@18.3.4)(awilix@8.0.1)(react-dom@18.3.1)(typescript@5.5.4)(ulid@2.3.0)
@@ -985,16 +985,16 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/core-flows@0.0.10-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
-    resolution: {integrity: sha512-F5u4JLtv+C8gxFjg1xO2u7j+Ue8tL361lXeQv9NjjwTPkoa/GwE8dhZed9rJK0NWEIP5/AtUohoHC9NKsMYPPQ==}
+  /@medusajs/core-flows@0.0.10-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
+    resolution: {integrity: sha512-pAVfCXGmRR9pzo8/YhJg+Wovk9dB48J98UvaJOpwkZsThdfvR0b07zhjG5oKRjsPQiq3497fTbx22B7I5OZNMg==}
     engines: {node: '>=16'}
     peerDependencies:
       awilix: ^8.0.1
       ulid: ^2.3.0
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)
-      '@medusajs/utils': 1.12.0-preview-20240904090511
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240904120747
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0)
       awilix: 8.0.1
       json-2-csv: 5.5.5
       ulid: 2.3.0
@@ -1329,8 +1329,8 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/modules-sdk@1.13.0-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1):
-    resolution: {integrity: sha512-6nRMtr2RUQu+Gtemy+7XIYn0KtH9O2q2DQVj2OEIIW2tfVl7JaKslhfpwA+qvHDVd2HMSS96ntbgsrSZ5Dtqcw==}
+  /@medusajs/modules-sdk@1.13.0-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1):
+    resolution: {integrity: sha512-Gws7ZwQ0Jibc61zS2cXxSsnCwnXV7ZVS7rf3h6fzgL8/F9CQlMBARVBecswan9uQbKOsUT0DUdk3cKFvxSxaYA==}
     engines: {node: '>=16'}
     peerDependencies:
       '@mikro-orm/core': 5.9.7
@@ -1338,8 +1338,8 @@ packages:
     dependencies:
       '@graphql-tools/merge': 9.0.6(graphql@16.9.0)
       '@graphql-tools/schema': 10.0.6(graphql@16.9.0)
-      '@medusajs/orchestration': 0.5.8-preview-20240904090511(awilix@8.0.1)
-      '@medusajs/utils': 1.12.0-preview-20240904090511
+      '@medusajs/orchestration': 0.5.8-preview-20240904120747(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240904120747
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       awilix: 8.0.1
       graphql: 16.9.0
@@ -1393,13 +1393,13 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/orchestration@0.5.8-preview-20240904090511(awilix@8.0.1):
-    resolution: {integrity: sha512-n8N8GaqnQ2hNgnNvAZNm03v3UXGD12beS73GeLKaDAbsz1rPmCA4odYGRKZ4kNMOLMHluI2V2ez7YA4U5SeCEw==}
+  /@medusajs/orchestration@0.5.8-preview-20240904120747(awilix@8.0.1):
+    resolution: {integrity: sha512-itNxYV9LpIlDYf+/GC5/ssFSiLlFlzC5NbTDRvXIpVT+3hIKKg+hl4j218IPpHciNjbeUpAjbRxAokx5qIxqaw==}
     engines: {node: '>=16'}
     peerDependencies:
       awilix: ^8.0.1
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240904090511
+      '@medusajs/utils': 1.12.0-preview-20240904120747
       awilix: 8.0.1
       graphql: 16.9.0
     transitivePeerDependencies:
@@ -1427,8 +1427,8 @@ packages:
     engines: {node: '>=16'}
     dev: true
 
-  /@medusajs/types@1.12.0-preview-20240904090511:
-    resolution: {integrity: sha512-ETvaXZY8aVytXgXr3YchpDoPIqb5J7Dpj61+UpvXfQfO+OmRNaG2S3fBqfU4QLamw8yh9a4/m+Y8495IHwwwUQ==}
+  /@medusajs/types@1.12.0-preview-20240904120747:
+    resolution: {integrity: sha512-Oc7h3xug2y16puma8rID++OrOj1AXYaFY/l+AWTLrIiu3pt6sCiGJZQKaBfIl/4dNInyVvPDPYQSdwP7cuFDbw==}
     engines: {node: '>=16'}
     dev: true
 
@@ -1510,11 +1510,11 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/utils@1.12.0-preview-20240904090511:
-    resolution: {integrity: sha512-ha1yley3mg7LUteRGqNAjxc4du/DJqaJkhWBXzd5oBwAqKqIuQAQeYuaxmSRGZB/aHS8ydM0Nap+4rf1Ykor/A==}
+  /@medusajs/utils@1.12.0-preview-20240904120747:
+    resolution: {integrity: sha512-O984YrTmRLXm+VPVCndlZs7Vfxy5HwszqYqMZg4yoe01FVGaeMJ2xfK9yBLZGOsfJyfnxsIEoj5bB7FA2cpuoA==}
     engines: {node: '>=16'}
     dependencies:
-      '@medusajs/types': 1.12.0-preview-20240904090511
+      '@medusajs/types': 1.12.0-preview-20240904120747
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(pg@8.12.0)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -1580,16 +1580,16 @@ packages:
       - tedious
     dev: true
 
-  /@medusajs/workflows-sdk@0.1.7-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
-    resolution: {integrity: sha512-/P2P5nN8r2xmG0O7m8fWR8l5d2bFZnfy1OBtE7ecSESDYvkJkALBhvHMffe9oECJeJCvdZeTtP12rsr+KL2uZQ==}
+  /@medusajs/workflows-sdk@0.1.7-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)(ulid@2.3.0):
+    resolution: {integrity: sha512-m88HR1sBxX+/sGVVbL7RHKjJrA5UanHnmF7s2jaP7zrKf1i3J9B/wYsaXK5E/kTfSAnIHjtuMJ1eGlPk/gnZtg==}
     engines: {node: '>=16'}
     peerDependencies:
       awilix: ^8.0.1
       ulid: ^2.3.0
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240904090511(@mikro-orm/core@5.9.7)(awilix@8.0.1)
-      '@medusajs/orchestration': 0.5.8-preview-20240904090511(awilix@8.0.1)
-      '@medusajs/utils': 1.12.0-preview-20240904090511
+      '@medusajs/modules-sdk': 1.13.0-preview-20240904120747(@mikro-orm/core@5.9.7)(awilix@8.0.1)
+      '@medusajs/orchestration': 0.5.8-preview-20240904120747(awilix@8.0.1)
+      '@medusajs/utils': 1.12.0-preview-20240904120747
       awilix: 8.0.1
       ulid: 2.3.0
     transitivePeerDependencies:
