@@ -107,10 +107,9 @@ const saveOptionValuesBuilderIdStep = createStep("Save builder id in product opt
                 [METADATA_BUILDER_ID]: builderId,
             };
 
-            // TODO: wait for update
-            // return productService.updateProductOptionValues(value.id, {
-            //     metadata: value.metadata,
-            // });
+            return productService.updateProductOptionValues(value.id, {
+                metadata: value.metadata,
+            });
             return value;
         });
 
