@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { defineWidgetConfig } from '@medusajs/admin-shared';
-import { AdminProduct, AdminProductCategory, DetailWidgetProps } from '@medusajs/types';
+import { defineWidgetConfig } from '@medusajs/admin-sdk';
+import { AdminProductCategory, DetailWidgetProps } from '@medusajs/types';
 import { Container, Button } from '@medusajs/ui';
 
 export const ProductCategoryWidget = ({ data }: DetailWidgetProps<AdminProductCategory>) => {

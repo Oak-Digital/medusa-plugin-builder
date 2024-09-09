@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { defineWidgetConfig } from '@medusajs/admin-shared';
+import { defineWidgetConfig } from '@medusajs/admin-sdk';
 import { AdminProduct, DetailWidgetProps } from '@medusajs/types';
 import { Container, Button } from '@medusajs/ui';
 

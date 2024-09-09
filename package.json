@@ -18,6 +18,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@medusajs/admin-sdk": "0.0.2-preview-20240909120812",
     "@medusajs/admin-shared": "preview",
     "@medusajs/core-flows": "preview",
     "@medusajs/medusa": "preview",
@@ -26,9 +27,9 @@
     "@medusajs/ui": "preview",
     "@medusajs/utils": "preview",
     "@medusajs/workflows-sdk": "preview",
-    "@types/react": "^18.3.4",
+    "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "axios": "^1.7.4",
+    "axios": "^1.7.7",
     "bumpp": "^9.5.2",
     "npm-run-all": "^4.1.5",
     "react": "^18.3.1",
@@ -39,11 +40,12 @@
     "zod": "^3.23.8"
   },
   "peerDependencies": {
-    "@medusajs/admin-shared": "0.0.2-preview-20240826120715",
+    "@medusajs/admin-sdk": "^0.0.2-preview-20240909120812",
+    "@medusajs/admin-shared": "^preview",
     "@medusajs/medusa": "^preview",
     "@medusajs/modules-sdk": "^preview",
     "@medusajs/types": "^preview",
-    "@medusajs/ui": "3.0.1-preview-20240826120715",
+    "@medusajs/ui": "^preview",
     "@medusajs/utils": "^preview",
     "@medusajs/workflows-sdk": "^preview",
     "axios": "^0.x || ^1.0.0",
@@ -53,6 +55,6 @@
   },
   "dependencies": {
     "@zodios/core": "^10.9.6",
-    "effect": "^3.7.0"
+    "effect": "^3.7.2"
   }
 }
