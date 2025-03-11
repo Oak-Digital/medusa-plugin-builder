@@ -44,6 +44,7 @@ export class BuilderWriteApiService {
                         schema: z.object({
                             name: z.string().optional(),
                             data: z.object({}).passthrough().optional(),
+                            published: z.enum(['published', 'draft', 'archived']).optional(),
                         }),
                     }
                 ],
@@ -68,6 +69,7 @@ export class BuilderWriteApiService {
         const result = await client.createEntry({
             name,
             data,
+            published: "published",
         }, {
             params: {
                 modelName,
