@@ -1,6 +1,7 @@
 {
   "name": "@oak-digital/medusa-plugin-builder",
   "version": "0.0.5",
+  "packageManager": "pnpm@9.15.5",
   "description": "",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,6 +13,7 @@
     "dev": "rimraf dist && run-p dev:*",
     "dev:admin": "tsc -w --project tsconfig.admin.json",
     "dev:server": "tsc -w --project tsconfig.json",
+    "typecheck": "tsc --noEmit",
     "build": "rimraf dist && tsc && tsc --project tsconfig.admin.json"
   },
   "keywords": [],
